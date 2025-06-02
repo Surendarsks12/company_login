@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>Dashboard</h2>
+  <div id="managementSection" style="display:none;">
+    <p>Welcome, Management!</p>
+    <p>View your assigned spreadsheet: <a id="spreadsheetLink" href="#" target="_blank">Spreadsheet</a></p>
+  </div>
+  <div id="employeeSection" style="display:none;">
+    <p>Welcome, Employee!</p>
+    <form id="dataEntryForm">
+      <textarea id="dataEntry" placeholder="Enter data here..." required></textarea><br>
+      <button type="submit">Submit Data</button>
+    </form>
+    <p id="dataMessage"></p>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
