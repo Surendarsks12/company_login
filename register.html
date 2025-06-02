@@ -1,19 +1,78 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <base target="_top">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Register Company</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f3f3f3;
+    }
+    h2 {
+      margin-top: 40px;
+      color: #333;
+    }
+    .form-box {
+      display: inline-block;
+      padding: 20px;
+      background-color: white;
+      border: 1px solid #ccc;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+    input {
+      display: block;
+      margin: 10px auto;
+      padding: 8px;
+      width: 250px;
+      border: 1px solid #aaa;
+      border-radius: 5px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
 <body>
+
   <h2>Register Company</h2>
-  <form id="registerForm">
-    <input type="text" id="companyName" placeholder="Company Name" required><br>
-    <input type="text" id="phoneNumber" placeholder="Phone Number" required><br>
-    <input type="email" id="email" placeholder="Email" required><br>
-    <input type="password" id="password" placeholder="Password" required><br>
-    <button type="submit">Register</button>
-  </form>
-  <p id="message"></p>
-  <script src="script.js"></script>
-</body>
-</html>
+
+  <div class="form-box">
+    <input type="text" id="companyName" placeholder="Company Name" required>
+    <input type="text" id="phone" placeholder="Phone Number" required>
+    <input type="email" id="email" placeholder="Email ID" required>
+    <input type="password" id="password" placeholder="Create Password" required>
+    <button onclick="registerCompany()">Register</button>
+  </div>
+
+  <script>
+    function registerCompany() {
+      const name = document.getElementById('companyName').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      if (!name || !phone || !email || !password) {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      const data = {
+        name: name,
+        phone: phone,
+        email: email,
+        password: password
+      };
+
+      fetch("https://script.google.com/macros/s/AKfycbyesSCXhDKi0MSgfomG3__FGsiqLQBiRcinsQtVV6gDm6HvLPS8mt82rJmRaodM1l1Qpg/exec", {
+        method: "POST",
+        headers: {
